@@ -6,9 +6,10 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class ElevatorController {
-    PriorityQueue<Request> requests = new PriorityQueue<>();
+    PriorityQueue<Request> requests;
     private Elevator elevator;
     public ElevatorController(Elevator elevator) {
+        requests = new PriorityQueue<>(comparator);
         this.elevator = elevator;
     }
 
@@ -70,5 +71,10 @@ public class ElevatorController {
         current.addAll(requests);
         requests.clear();
         requests.addAll(current);
+    }
+
+    public Boolean addRequest(Request request){
+        this.requests.add(request);
+        return true;
     }
 }

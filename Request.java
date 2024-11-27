@@ -1,11 +1,11 @@
 package ElevatorDesign;
 public class Request{
     private final int targetFloor;
-    private final String direction;
+    private final Direction direction;
     private final Boolean isExternal;
 
 
-    public Request(int targetFloor, String direction, Boolean isExternal) {
+    public Request(int targetFloor, Direction direction, Boolean isExternal) {
         this.targetFloor = targetFloor;
         this.direction = direction;
         this.isExternal = isExternal;
@@ -15,7 +15,7 @@ public class Request{
         return targetFloor;
     }
 
-    public String getDirection() {
+    public Direction getDirection() {
         return direction;
     }
 
